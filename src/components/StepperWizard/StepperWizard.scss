@@ -1,0 +1,254 @@
+@import "../../style/colors";
+@import "../../style/stepper";
+
+$accent-green: #4caf50;
+$glass-color: rgba(255, 255, 255, 0.15);
+$input-border: rgba(255, 255, 255, 0.5);
+
+.wizard-content {
+  margin-bottom: 24px;
+}
+
+.card-container {
+  background: #f0f1f2;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.header-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+
+  .back-btn {
+    color: white;
+    background: $glass-color;
+    border: 1px solid rgba(255,255,255,0.2);
+    &:hover { background: rgba(255,255,255,0.3); }
+  }
+
+  .custom-select {
+    min-width: 160px;
+    .MuiOutlinedInput-root {
+      color: white;
+      background: $glass-color;
+      border-radius: 10px;
+      fieldset { border-color: rgba(255,255,255,0.3); }
+    }
+    .MuiInputLabel-root { color: rgba(255,255,255,0.8); }
+    .MuiSvgIcon-root { color: white; }
+  }
+}
+
+// Stepper styles imported from _stepper.scss
+
+.info-view {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
+
+  .main-title {
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+  }
+
+  .switch-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.content-body {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.buttons {
+  margin-top: 20px;
+  padding: 4px 4px 20px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  .previous-button {
+    background-color: $primary-color;
+    padding: 10px 28px;
+    border-radius: 50px;
+    text-transform: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .3px;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      background-color: darken($primary-color, 8%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+    }
+    &:focus-visible {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+    &:active { transform: translateY(-1px); }
+  }
+
+  .start-button {
+    background-color: $accent-green;
+    padding: 10px 28px;
+    border-radius: 50px;
+    text-transform: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .3px;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      background-color: darken($accent-green, 8%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+    }
+    &:focus-visible {
+      outline: 2px solid $accent-green;
+      outline-offset: 2px;
+    }
+    &:active { transform: translateY(-1px); }
+  }
+}
+
+.shape-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .shape-card {
+    height: 180px;
+    width: 180px;
+    max-width: 400px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    border: 1.5px solid #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.9);
+    &:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .card-area {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-content {
+      padding: 20px;
+      color: #ffffff;
+
+      h6 {
+        font-weight: 600;
+        text-align: center;
+        word-wrap: break-word;
+      }
+    }
+
+    @media (max-width: 600px) {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
+
+.form-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 12px;
+
+  .input-group {
+    margin-bottom: 25px;
+
+    .label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      span { color: #ff5f5f; }
+    }
+
+    .info-icon {
+      color: $primary-color;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  }
+
+  .custom-textfield {
+    .MuiOutlinedInput-root {
+      color: black;
+      border: 2px solid $primary-color;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+
+      fieldset {
+        border-color: $input-border;
+      }
+      &:hover fieldset {
+        border-color: white;
+      }
+      &.Mui-focused fieldset {
+        border-color: white;
+      }
+
+    }
+  }
+
+  .custom-select {
+    color: black;
+    border: 2px solid $primary-color;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+
+    .MuiSvgIcon-root {
+      color: white;
+    }
+
+    &.MuiOutlinedInput-root {
+      fieldset {
+        border-color: rgba(255, 255, 255, 0.3);
+        border-width: 1px;
+        transition: border-color 0.2s ease-in-out;
+      }
+
+      &:hover fieldset {
+        border-color: white !important;
+      }
+
+      &.Mui-focused fieldset {
+        border-color: white !important;
+        border-width: 2px;
+      }
+    }
+  }
+
+  .custom-radio-group {
+    margin-bottom: 10px;
+    .MuiTypography-root {
+      font-size: 0.9rem;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import "../../style/colors";
+
+// Variables de color basadas en la imagen
+$code-bg: #ffffff;
+$button-green: #2ecc71;
+$button-green-hover: #27ae60;
+$tab-active-bg: rgba(255, 255, 255, 0.1);
+
+.vc-modal-paper {
+  background: $primary-color !important;
+  border-radius: 16px !important;
+  color: white !important;
+}
+
+.vc-header {
+  padding: 24px 24px 0 24px;
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
+
+.vc-tabs-container {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 16px;
+
+  .vc-tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    transition: 0.3s;
+
+    &:focus-visible {
+      outline: 2px solid white;
+      outline-offset: -2px;
+    }
+
+    &.active {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: $tab-active-bg;
+      font-weight: 700;
+    }
+  }
+}
+
+.vc-code-container {
+  background-color: $code-bg;
+  border-radius: 4px;
+  margin: 0 24px;
+  padding: 16px;
+  height: 400px;
+  overflow-y: hidden;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+
+  pre {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: #333;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+.vc-actions {
+  padding: 24px 24px 32px !important;
+  justify-content: flex-end !important;
+  gap: 12px;
+
+  .btn-green {
+    background-color: $button-green !important;
+    color: white !important;
+    text-transform: none !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: .3px !important;
+    padding: 10px 28px !important;
+    border-radius: 50px !important;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+    &:hover {
+      background-color: $button-green-hover !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .12) !important;
+    }
+
+    &:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(-1px) !important;
+    }
+  }
+}

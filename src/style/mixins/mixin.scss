@@ -1,0 +1,39 @@
+@use 'sass:math';
+@mixin breakpoint($point) {
+  @if $point == xl {
+    // 1200px
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  } 
+  @if $point == lg {
+    // 992px
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  @if $point == md {
+    // 768px
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $point == sm {
+    // 600px
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+  @if $point == xsl {
+    // 600px
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $point == xs {
+    // 600px and down
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }  
+}

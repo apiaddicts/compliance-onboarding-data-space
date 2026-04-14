@@ -1,0 +1,222 @@
+@import "../../style/colors";
+@import "../../style/stepper";
+
+$accent-green: #4caf50;
+$glass-bg: rgba(255, 255, 255, 0.05);
+$accent-yellow: #f0c36d;
+$input-border: rgba(255, 255, 255, 0.5);
+
+.wizard-content {
+  margin-bottom: 24px;
+}
+
+.card-container {
+  background: #f0f1f2;
+  margin-top: 16px;
+  padding: 8px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 50px;
+
+  .custom-select {
+    min-width: 180px;
+    .MuiOutlinedInput-root {
+      color: white;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      fieldset { border-color: rgba(255, 255, 255, 0.3); }
+      &:hover fieldset { border-color: white; }
+    }
+    .MuiInputLabel-root { color: rgba(255, 255, 255, 0.7); }
+    .MuiSvgIcon-root { color: white; }
+  }
+}
+
+// Stepper styles imported from _stepper.scss
+
+.main-info {
+  text-align: center;
+  max-width: 100%;
+  margin: 0;
+
+  .title {
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    margin-bottom: 40px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    line-height: 1.6;
+  }
+
+  .disclaimer-box {
+    background: $glass-bg;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    margin-bottom: 30px;
+
+    .disclaimer-title {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+      li { margin-bottom: 5px; opacity: 0.9; }
+    }
+  }
+
+  .switch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+.buttons {
+  margin-top: 20px;
+  padding: 4px 4px 20px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  .previous-button {
+    background-color: $primary-color;
+    padding: 10px 28px;
+    border-radius: 50px;
+    text-transform: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .3px;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      background-color: darken($primary-color, 8%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+    }
+    &:focus-visible {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+    &:active { transform: translateY(-1px); }
+  }
+
+  .start-button {
+    background-color: $accent-green;
+    padding: 10px 28px;
+    border-radius: 50px;
+    text-transform: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .3px;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      background-color: darken($accent-green, 8%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+    }
+    &:focus-visible {
+      outline: 2px solid $accent-green;
+      outline-offset: 2px;
+    }
+    &:active { transform: translateY(-1px); }
+  }
+}
+
+.form-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 12px;
+
+  .input-group {
+    margin-bottom: 25px;
+
+    .label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      span { color: #ff5f5f; }
+    }
+  }
+
+  .custom-textfield {
+    .MuiOutlinedInput-root {
+      color: white;
+      border: 2px solid $primary-color;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+
+      fieldset {
+        border-color: $input-border;
+      }
+      &:hover fieldset {
+        border-color: white;
+      }
+      &.Mui-focused fieldset {
+        border-color: white;
+      }
+
+    }
+
+    .info-icon {
+      color: white;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  }
+
+  .custom-radio-group {
+    margin-bottom: 10px;
+    .MuiTypography-root {
+      font-size: 0.9rem;
+      color: black;
+    }
+  }
+
+  .custom-button {
+    &.MuiButton-root {
+      color: $primary-color;
+      border: 2px solid $primary-color;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      text-transform: none;
+      padding: 10px 28px;
+      width: 100%;
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+      }
+
+      &.Mui-focused, &:focus-visible {
+        border-color: white;
+        outline: 2px solid $primary-color;
+        outline-offset: 2px;
+      }
+
+      .MuiButton-startIcon, .MuiButton-endIcon {
+        color: white;
+      }
+    }
+  }
+}

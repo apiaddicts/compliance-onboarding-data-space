@@ -1,0 +1,21 @@
+{
+  "https://w3id.org/gaia-x/development/v22/context.jsonld": {
+    "@context": {
+      "gx": "https://w3id.org/gaia-x/ontology#",
+      "legalName": "gx:legalName",
+      "legalRegistrationNumber": "gx:legalRegistrationNumber",
+      "headquarterAddress": "gx:headquarterAddress",
+      "countrySubdivisionCode": "gx:countrySubdivisionCode",
+      "legalAddress": "gx:legalAddress",
+      "countryCode": "gx:countryCode",
+      "vatID": "gx:vatID",
+      "leiCode": "gx:leiCode",
+      "parentOrganization": "gx:parentOrganization",
+      "subOrganization": "gx:subOrganization",
+      "LegalParticipant": "gx:LegalParticipant",
+      "gx-terms-and-conditions": "https://w3id.org/gaia-x/terms-and-conditions#",
+      "gaiaxTermsAndConditions": "gx-terms-and-conditions:gaiaxTermsAndConditions",
+      "complianceCertificateClaim": "gx:complianceCertificateClaim"
+    }
+  }
+}

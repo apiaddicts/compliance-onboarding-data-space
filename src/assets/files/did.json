@@ -1,0 +1,24 @@
+{
+  "context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "id": "did:web:apiquality.io",
+  "verificationMethod": [
+    {
+      "id": "did:web:self-description.opendataspace.io#X509-JWK2020",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:apiquality.io",
+      "publicKeyJwk": {
+        "kty": "RSA",
+        "n": "u8PFE1ERsS9tkG1F3sW4bf7aM0ynYal_cRLCadC3SopdTFBYLBY1RaUHZKHtOf9j5Iv7IyTnKyig9S7kQWXrHwi_Pxp73dLMRKlvFqfj70rZb9oZgy_2hF95g0qtzIht5RnTWtJScizLN7wloNDM15zzsev0IKMoU49H9oZPXagNKYcCbgdjWQOotF_rM6K64Y6ANZ-Z213NfrhypmroBGcktlcOi5EYISOcX6eq9T8HzH7471N7cQFFrWt-ZcAQo2kaVFfgH5QVrGTIQiW9UFXmiAAan56vINNAwXHPLPj6CXBGBYJqq1MFCXzw7PQZT7efBESw9JueUi8QEsN8Fw",
+        "e": "AQAB",
+        "alg": "RS256",
+        "x5u": "https://apiquality.io/.well-known/xain_cert.pem"
+      }
+    }
+  ],
+  "assertionMethod": [
+    "did:web:apiquality.io#JWK2020-X509-0"
+  ]
+}

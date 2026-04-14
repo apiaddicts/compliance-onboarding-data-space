@@ -1,0 +1,156 @@
+@import "../../style/colors";
+@import "../../style/variables.module.scss";
+@import "../../style/mixins/mixin.scss";
+
+.header {
+  background: transparent;
+  width: 100%;
+  transition: 0.3s ease all;
+  padding: 1rem 1.5rem;
+
+  &__content {
+    overflow: visible;
+    color: transparent;
+    margin: 0 auto;
+    max-width: 1920px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;
+
+    &__nav {
+      &__overlay {
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000, $alpha: 0.7);
+        position: relative;
+        z-index: -1;
+      }
+
+      top: 0;
+      right: 100%;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background-color: $primary-color;
+      transform: translate(0);
+      transition: 0.3s ease transform;
+
+      @include breakpoint(md) {
+        transform: none;
+        flex-direction: row;
+        background: transparent;
+        width: auto;
+        height: 100%;
+        position: static;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(md) {
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 0;
+        }
+
+        li {
+          &:not(:last-child) {
+            @include breakpoint(md) {
+              margin-bottom: 0;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            color: inherit;
+            padding: 0.75rem 1.25rem;
+            border-radius: 10%;
+            font-weight: map-deep-get(300, "medium") !important;
+
+            &:hover {
+              color: $secondary-color;
+              font-weight: map-deep-get(300, "bold") !important;
+            }
+
+            &:focus-visible {
+              outline: 2px solid $secondary-color;
+              outline-offset: 2px;
+              color: $secondary-color;
+              font-weight: map-deep-get(300, "bold") !important;
+            }
+
+            &:active {
+              color: $secondary-color;
+              font-weight: map-deep-get(300, "bold") !important;
+            }
+          }
+        }
+      }
+
+      &.isMenu {
+        width: 100%;
+        height: 100%;
+        transform: translate(100%);
+      }
+    }
+
+    &__toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: 0.3s ease all;
+      position: relative;
+      font-size: 20px;
+
+      &:hover {
+        color: $secondary-color;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $secondary-color;
+        outline-offset: 2px;
+      }
+
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
+
+    &__select {
+      width: 6rem;
+      @include breakpoint(lg) {
+        width: 12rem;
+      }
+      @include breakpoint(xl) {
+        width: 12rem;
+      }
+    }
+  }
+}
+
+.navbar {
+  &__xs {
+    display: none !important;
+
+    @include breakpoint(xs) {
+      display: block !important;
+    }
+
+    @include breakpoint(sm) {
+      display: block !important;
+    }
+
+    @include breakpoint(md) {
+      display: none !important;
+    }
+  }
+}
